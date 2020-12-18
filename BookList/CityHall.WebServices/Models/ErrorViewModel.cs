@@ -1,6 +1,6 @@
 using System;
 
-namespace CityHall.WebServices.Models
+namespace BookList.WebServices.Models
 {
     public class ErrorViewModel
     {

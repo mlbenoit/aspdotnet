@@ -4,4 +4,11 @@
     <TargetFramework>netcoreapp3.1</TargetFramework>
   </PropertyGroup>
 
+  <ItemGroup>
+    <Folder Include="Contracts\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\CityHall.Entities\BookList.Entities.csproj" />
+    <ProjectReference Include="..\CityHall.Enums\BookList.Enums.csproj" />
+  </ItemGroup>
 </Project>

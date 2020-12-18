@@ -4,4 +4,10 @@
     <TargetFramework>netstandard2.1</TargetFramework>
   </PropertyGroup>
 
+  <ItemGroup>
+    <Folder Include="WebContracts\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\CityHall.Enums\BookList.Enums.csproj" />
+  </ItemGroup>
 </Project>

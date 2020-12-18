@@ -4,4 +4,16 @@
     <TargetFramework>netcoreapp3.1</TargetFramework>
   </PropertyGroup>
 
+  <ItemGroup>
+    <Folder Include="Contracts\" />
+    <Folder Include="Contracts\Identity\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\CityHall.WebContracts\BookList.WebContracts.csproj" />
+    <ProjectReference Include="..\CityHall.Enums\BookList.Enums.csproj" />
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="Microsoft.AspNetCore.Authorization" Version="3.1.6" />
+    <PackageReference Include="Microsoft.AspNetCore.Identity" Version="2.2.0" />
+  </ItemGroup>
 </Project>
