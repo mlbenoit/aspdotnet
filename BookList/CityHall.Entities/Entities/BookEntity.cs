@@ -2,7 +2,7 @@ using System;
 using System.ComponentModel.DataAnnotations;
 using Microsoft.AspNetCore.Identity;
 
-namespace BookList.Entities
+namespace BookRental.Entities
 {
     public class BookEntity
     {

@@ -1,5 +1,5 @@
 ﻿using System;
-namespace BookList.WebServices
+namespace BookRental.WebServices
 {
     public class WebServiceConstants
     {

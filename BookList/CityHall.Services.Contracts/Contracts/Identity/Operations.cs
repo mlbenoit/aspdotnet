@@ -1,7 +1,7 @@
 ﻿using System;
 using Microsoft.AspNetCore.Authorization.Infrastructure;
 
-namespace BookList.Services.Contracts.Contracts.Identity
+namespace BookRental.Services.Contracts.Contracts.Identity
 {
     public class Operations
     {

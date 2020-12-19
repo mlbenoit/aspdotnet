@@ -1,10 +1,10 @@
 ﻿using System;
 using System.Threading.Tasks;
-using BookList.Entities;
-using BookList.Services.Contracts.Identity;
+using BookRental.Entities;
+using BookRental.Services.Contracts.Identity;
 using Microsoft.AspNetCore.Identity;
 
-namespace BookList.Services.Identity
+namespace Bookrental.Services.Identity
 {
     public class UserManagerWrapper: IUserManager
     {

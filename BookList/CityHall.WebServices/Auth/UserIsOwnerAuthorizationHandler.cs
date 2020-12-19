@@ -1,8 +1,8 @@
 ﻿using System;
 using System.IdentityModel.Tokens.Jwt;
 using System.Threading.Tasks;
-using BookList.Entities;
-using BookList.Services.Contracts.Contracts.Identity;
+using BookRental.Entities;
+using BookRental.Services.Contracts.Contracts.Identity;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Authorization.Infrastructure;
 using Microsoft.AspNetCore.Identity;

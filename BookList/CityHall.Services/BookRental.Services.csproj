@@ -9,8 +9,8 @@
     <Folder Include="Services\Identity\" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\CityHall.Persistence.Contracts\BookList.Persistence.Contracts.csproj" />
-    <ProjectReference Include="..\CityHall.Services.Contracts\BookList.Services.Contracts.csproj" />
+    <ProjectReference Include="..\CityHall.Persistence.Contracts\BookRental.Persistence.Contracts.csproj" />
+    <ProjectReference Include="..\CityHall.Services.Contracts\BookRental.Services.Contracts.csproj" />
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore" Version="3.1.6" />

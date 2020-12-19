@@ -1,10 +1,10 @@
 ﻿using System;
 using System.Threading.Tasks;
-using BookList.Entities;
-using BookList.Services.Contracts.Identity;
+using BookRental.Entities;
+using BookRental.Services.Contracts.Identity;
 using Microsoft.AspNetCore.Identity;
 
-namespace BookList.Services.Identity
+namespace BookRental.Services.Identity
 {
     public class SignInManagerWrapper : ISignInManager
     {

@@ -17,22 +17,22 @@
     </PackageReference>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\CityHall.Persistence\BookList.Persistence.csproj">
+    <ProjectReference Include="..\CityHall.Persistence\BookRental.Persistence.csproj">
       <GlobalPropertiesToRemove></GlobalPropertiesToRemove>
     </ProjectReference>
-    <ProjectReference Include="..\CityHall.Persistence.Contracts\BookList.Persistence.Contracts.csproj">
+    <ProjectReference Include="..\CityHall.Persistence.Contracts\BookRental.Persistence.Contracts.csproj">
       <GlobalPropertiesToRemove></GlobalPropertiesToRemove>
     </ProjectReference>
-    <ProjectReference Include="..\CityHall.Persistence.Migrations\BookList.Persistence.Migrations.csproj">
+    <ProjectReference Include="..\CityHall.Persistence.Migrations\BookRental.Persistence.Migrations.csproj">
       <GlobalPropertiesToRemove></GlobalPropertiesToRemove>
     </ProjectReference>
-    <ProjectReference Include="..\CityHall.Services\BookList.Services.csproj">
+    <ProjectReference Include="..\CityHall.Services\BookRental.Services.csproj">
       <GlobalPropertiesToRemove></GlobalPropertiesToRemove>
     </ProjectReference>
-    <ProjectReference Include="..\CityHall.Services.Contracts\BookList.Services.Contracts.csproj">
+    <ProjectReference Include="..\CityHall.Services.Contracts\BookRental.Services.Contracts.csproj">
       <GlobalPropertiesToRemove></GlobalPropertiesToRemove>
     </ProjectReference>
-    <ProjectReference Include="..\CityHall.WebContracts\BookList.WebContracts.csproj">
+    <ProjectReference Include="..\CityHall.WebContracts\BookRental.WebContracts.csproj">
       <GlobalPropertiesToRemove></GlobalPropertiesToRemove>
     </ProjectReference>
   </ItemGroup>

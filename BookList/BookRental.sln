@@ -1,23 +1,23 @@
 
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BookList.Entities", "CityHall.Entities\BookList.Entities.csproj", "{9502E7CF-783A-46ED-9BAD-3522B6A37672}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BookRental.Entities", "CityHall.Entities\BookRental.Entities.csproj", "{9502E7CF-783A-46ED-9BAD-3522B6A37672}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BookList.Enums", "CityHall.Enums\BookList.Enums.csproj", "{FA32D94A-4388-4527-8792-67BE5BBFFF2F}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Bookrental.Enums", "CityHall.Enums\Bookrental.Enums.csproj", "{FA32D94A-4388-4527-8792-67BE5BBFFF2F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BookList.Persistence", "CityHall.Persistence\BookList.Persistence.csproj", "{F2769DC9-D2A0-4F6C-ADB5-5131F4DC89EC}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BookRental.Persistence", "CityHall.Persistence\BookRental.Persistence.csproj", "{F2769DC9-D2A0-4F6C-ADB5-5131F4DC89EC}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BookList.Persistence.Contracts", "CityHall.Persistence.Contracts\BookList.Persistence.Contracts.csproj", "{67D82527-693B-4943-B074-426B9E0DF6FF}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BookRental.Persistence.Contracts", "CityHall.Persistence.Contracts\BookRental.Persistence.Contracts.csproj", "{67D82527-693B-4943-B074-426B9E0DF6FF}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BookList.Persistence.Migrations", "CityHall.Persistence.Migrations\BookList.Persistence.Migrations.csproj", "{5CA644B7-0077-4C0E-90A5-8DF905C79A1C}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BookRental.Persistence.Migrations", "CityHall.Persistence.Migrations\BookRental.Persistence.Migrations.csproj", "{5CA644B7-0077-4C0E-90A5-8DF905C79A1C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BookList.Services", "CityHall.Services\BookList.Services.csproj", "{CBAAC83D-D593-4DBA-B35A-0847810EEC5F}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BookRental.Services", "CityHall.Services\BookRental.Services.csproj", "{CBAAC83D-D593-4DBA-B35A-0847810EEC5F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BookList.Services.Contracts", "CityHall.Services.Contracts\BookList.Services.Contracts.csproj", "{8655FF65-6F1C-4937-8B8B-CE4DB4D0FE1D}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BookRental.Services.Contracts", "CityHall.Services.Contracts\BookRental.Services.Contracts.csproj", "{8655FF65-6F1C-4937-8B8B-CE4DB4D0FE1D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BookList.WebContracts", "CityHall.WebContracts\BookList.WebContracts.csproj", "{77BAA10C-E4FC-415F-B21E-F309630CEE6E}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BookRental.WebContracts", "CityHall.WebContracts\BookRental.WebContracts.csproj", "{77BAA10C-E4FC-415F-B21E-F309630CEE6E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BookList.WebServices", "CityHall.WebServices\BookList.WebServices.csproj", "{96EA8B9F-9E8B-4486-B7D9-C76A7473F4E5}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BookRental.WebServices", "CityHall.WebServices\BookRental.WebServices.csproj", "{96EA8B9F-9E8B-4486-B7D9-C76A7473F4E5}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

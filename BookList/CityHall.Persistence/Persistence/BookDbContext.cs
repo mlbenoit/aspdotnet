@@ -2,10 +2,10 @@
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.AspNetCore.Identity;
-using BookList.Entities;
-using CityHall.Entities;
+using BookRental.Entities;
 
-namespace BookList.Persistence
+
+namespace BookRental.Persistence
 {
     public class BookDbContext:IdentityDbContext<UserEntity, UserRoleEntity, string>
     {

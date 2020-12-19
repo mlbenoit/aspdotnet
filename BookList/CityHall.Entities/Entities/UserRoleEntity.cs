@@ -1,7 +1,7 @@
 using System;
 using Microsoft.AspNetCore.Identity;
 
-namespace BookList.Entities
+namespace BookRental.Entities
 {
     public class UserRoleEntity:IdentityRole
     {

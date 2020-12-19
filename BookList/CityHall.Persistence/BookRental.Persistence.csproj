@@ -9,9 +9,9 @@
     <Folder Include="Persistence\Repositories\" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\CityHall.Entities\BookList.Entities.csproj" />
-    <ProjectReference Include="..\CityHall.Enums\BookList.Enums.csproj" />
-    <ProjectReference Include="..\CityHall.Persistence.Contracts\BookList.Persistence.Contracts.csproj" />
+    <ProjectReference Include="..\CityHall.Entities\BookRental.Entities.csproj" />
+    <ProjectReference Include="..\CityHall.Enums\Bookrental.Enums.csproj" />
+    <ProjectReference Include="..\CityHall.Persistence.Contracts\BookRental.Persistence.Contracts.csproj" />
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="Microsoft.Extensions.Identity.Stores" Version="3.1.6" />
