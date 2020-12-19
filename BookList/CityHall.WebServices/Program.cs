@@ -11,6 +11,7 @@ namespace CityHall.WebServices
 {
     public class Program
     {
+        public static readonly bool SkipSecurityChecks = true; //TODO:Security - Remove this when going live
         public static void Main(string[] args)
         {
             CreateHostBuilder(args).Build().Run();

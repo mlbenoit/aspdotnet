@@ -11,6 +11,7 @@
   <ItemGroup>
     <ProjectReference Include="..\CityHall.WebContracts\BookList.WebContracts.csproj" />
     <ProjectReference Include="..\CityHall.Enums\BookList.Enums.csproj" />
+    <ProjectReference Include="..\CityHall.Entities\BookList.Entities.csproj" />
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="Microsoft.AspNetCore.Authorization" Version="3.1.6" />

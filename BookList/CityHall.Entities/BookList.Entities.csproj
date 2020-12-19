@@ -12,6 +12,6 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\CityHall.Enums\BookList.Enums.csproj" />
-    <ProjectReference Include="..\CityHall.Services.Contracts\BookList.Services.Contracts.csproj" />
+    <ProjectReference Include="..\CityHall.WebContracts\BookList.WebContracts.csproj" />
   </ItemGroup>
 </Project>

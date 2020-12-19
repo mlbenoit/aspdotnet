@@ -2,15 +2,22 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using BookList.Entities;
 using BookList.Persistence;
+using BookList.Services.Contracts.Identity;
+using BookList.Services.Identity;
 using BookList.WebServices;
+using BookList.WebServices.Auth;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using Microsoft.OpenApi.Models;
 
 namespace CityHall.WebServices
 {
@@ -34,7 +41,18 @@ namespace CityHall.WebServices
                              option.MigrationsAssembly(WebServiceConstants.MIGRATIONS_ASSEMBLY_NAME));
 
             });
+
+            AddIdentityService(services);
+
             services.AddControllersWithViews();
+
+            SetupPryzeboxServices(services, Configuration);
+
+            services.AddSwaggerGen(swagger =>
+            {
+                swagger.SwaggerDoc("v1", new OpenApiInfo { Title = "BookRental API" });
+            });
+
 
         }
 
@@ -64,6 +82,38 @@ namespace CityHall.WebServices
                     name: "default",
                     pattern: "{controller=Home}/{action=Index}/{id?}");
             });
+        }
+
+        public void AddIdentityService(IServiceCollection services)
+        {
+            services.AddIdentity<UserEntity, UserRoleEntity>(options =>
+            {
+                options.Password.RequireDigit = true;
+                options.Password.RequiredLength = 8;
+                options.Password.RequireNonAlphanumeric = true;
+                options.Password.RequireUppercase = false;
+                options.Password.RequireLowercase = false;
+                options.Password.RequiredUniqueChars = 2;
+            })
+                .AddEntityFrameworkStores<BookDbContext>()
+                .AddDefaultTokenProviders();
+        }
+
+        public void SetupPryzeboxServices(IServiceCollection services, IConfiguration configuration)
+        {
+            //AspNet Identity, Authentication, & Authorization services
+
+            services.AddScoped<IAuthorizationHandler, UserIsOwnerAuthorizationHandler>();
+            services.AddScoped<IPasswordHasher<UserEntity>, PasswordHasher<UserEntity>>();
+
+            services.AddScoped<ISignInManager, SignInManagerWrapper>();
+            services.AddScoped<IUserManager, UserManagerWrapper>();
+
+            // DB Repositories
+
+
+            //Services
+
         }
     }
 }
