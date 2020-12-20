@@ -43,6 +43,16 @@ namespace CityHall.WebServices
 
             });
 
+            // make sure that all emails are unique, otherwise UserManager.FindByEmail
+            // will throw.
+
+            services.Configure<IdentityOptions>(options =>
+            {
+              
+                options.User.RequireUniqueEmail = true;
+
+            });
+
             AddIdentityService(services);
 
             services.AddControllersWithViews();
