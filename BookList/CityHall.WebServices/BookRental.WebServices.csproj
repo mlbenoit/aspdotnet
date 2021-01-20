@@ -35,9 +35,14 @@
     <ProjectReference Include="..\CityHall.WebContracts\BookRental.WebContracts.csproj">
       <GlobalPropertiesToRemove></GlobalPropertiesToRemove>
     </ProjectReference>
+    <ProjectReference Include="..\CityHall.Entities\BookRental.Entities.csproj">
+      <GlobalPropertiesToRemove></GlobalPropertiesToRemove>
+    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Controllers\" />
     <Folder Include="Auth\" />
+    <Folder Include="ControllersMvc\" />
+    <Folder Include="Views\AdminsMvc\" />
   </ItemGroup>
 </Project>

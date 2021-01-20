@@ -1,0 +1,20 @@
+﻿@model AdminLoginRequest
+@{
+    ViewData["Title"] = "Sign in";
+}
+
+<div class="row">
+    <div class="col-4 offset-4 border border-light py-5">
+        <form asp-route="Login" method="post">
+            <div class="form-group">
+                <label asp-for="Email">Email</label>
+                <input type="email" class="form-control" asp-for="Email" placeholder="Email" value="aliahmad71452@gmail.com">
+            </div>
+            <div class="form-group">
+                <label asp-for="Password">Password</label>
+                <input type="password" class="form-control" asp-for="Password" placeholder="Password" value="A@123456">
+            </div>
+            <button type="submit" class="btn btn-primary">Login</button>
+        </form>
+    </div>
+</div>

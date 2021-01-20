@@ -10,7 +10,7 @@ namespace BookRental.Persistence
     public class BookDbContext:IdentityDbContext<UserEntity, UserRoleEntity, string>
     {
         public DbSet<BookEntity> Books { get; set; } // Add the book table to the database
-
+        
 
 
         public BookDbContext(DbContextOptions<BookDbContext> options) : base(options)

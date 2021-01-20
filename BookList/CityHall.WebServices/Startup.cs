@@ -6,19 +6,27 @@ using BookList.WebServices.Auth;
 using Bookrental.Services.Identity;
 using BookRental.Entities;
 using BookRental.Persistence;
+using BookRental.Persistence.Contracts;
+using BookRental.Persistence.Persistence;
+using BookRental.Services;
+using BookRental.Services.Contracts;
 using BookRental.Services.Contracts.Identity;
 using BookRental.Services.Identity;
 using BookRental.WebServices;
+using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.AspNetCore.Identity;
+using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.Authorization;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.OpenApi.Models;
+using Newtonsoft.Json.Serialization;
 
 namespace CityHall.WebServices
 {
@@ -43,6 +51,46 @@ namespace CityHall.WebServices
 
             });
 
+            AddIdentityService(services);
+
+            // ==== Add Authentication ====
+
+            services
+                .AddAuthentication(options =>
+                {
+                    options.DefaultAuthenticateScheme = CookieAuthenticationDefaults.AuthenticationScheme;
+                    //options.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
+                    //options.DefaultScheme = JwtBearerDefaults.AuthenticationScheme;
+                    //options.DefaultChallengeScheme = JwtBearerDefaults.AuthenticationScheme;
+                })
+                .AddCookie(options =>
+                {
+                    options.LoginPath = "/admin/Admins/Login";
+                    options.AccessDeniedPath = "/admin/Forbidden";
+                    options.SlidingExpiration = true;
+                });
+
+            //Assembly ControllerAssembly = typeof(UsersController).Assembly;
+
+            IMvcBuilder mvcBuilder = services.AddControllersWithViews(options =>
+            {
+                //AuthorizationPolicy policy = new AuthorizationPolicyBuilder()
+                //  .RequireAuthenticatedUser()
+                //  .Build();
+                if (!Program.SkipSecurityChecks)
+                {
+                    options.Filters.Add(new AuthorizeFilter()); // gloabal filter // TODO: SECURITY - JAGAN
+                }
+            });
+
+            //x.AddJsonOptions(SetupTextJsonOptions);
+            mvcBuilder.AddNewtonsoftJson(SetupNewtonsoftJsonOptions);
+            mvcBuilder.AddJsonOptions(opt => opt.JsonSerializerOptions.PropertyNamingPolicy = null);
+#if DEBUG
+            mvcBuilder.AddRazorRuntimeCompilation();
+#endif
+
+
             // make sure that all emails are unique, otherwise UserManager.FindByEmail
             // will throw.
 
@@ -53,9 +101,7 @@ namespace CityHall.WebServices
 
             });
 
-            AddIdentityService(services);
-
-            services.AddControllersWithViews();
+     
 
             SetupPryzeboxServices(services, Configuration);
 
@@ -70,29 +116,18 @@ namespace CityHall.WebServices
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {
-            if (env.IsDevelopment())
+            StartupConfigure.Configure(app, env, Configuration);
+            SeedDatabase(app);
+        }
+
+        private static void SeedDatabase(IApplicationBuilder app)
+        {
+            using (IServiceScope serviceScope = app.ApplicationServices.GetRequiredService<IServiceScopeFactory>().CreateScope())
             {
-                app.UseDeveloperExceptionPage();
+                BookDbContext context = serviceScope.ServiceProvider.GetService<BookDbContext>();
+                //context.Database.Migrate();
+                context.EnsureSeedData().GetAwaiter().GetResult();
             }
-            else
-            {
-                app.UseExceptionHandler("/Home/Error");
-                // The default HSTS value is 30 days. You may want to change this for production scenarios, see https://aka.ms/aspnetcore-hsts.
-                app.UseHsts();
-            }
-            app.UseHttpsRedirection();
-            app.UseStaticFiles();
-
-            app.UseRouting();
-
-            app.UseAuthorization();
-
-            app.UseEndpoints(endpoints =>
-            {
-                endpoints.MapControllerRoute(
-                    name: "default",
-                    pattern: "{controller=Home}/{action=Index}/{id?}");
-            });
         }
 
         public void AddIdentityService(IServiceCollection services)
@@ -121,10 +156,16 @@ namespace CityHall.WebServices
             services.AddScoped<IUserManager, UserManagerWrapper>();
 
             // DB Repositories
-
+            services.AddScoped<IUserAccountRepository, UserAccountRepository>();
 
             //Services
+            services.AddScoped<IAdminService, AdminService>();
+        }
 
+        private static void SetupNewtonsoftJsonOptions(MvcNewtonsoftJsonOptions obj)
+        {
+            obj.SerializerSettings.ContractResolver = new DefaultContractResolver();
+            obj.SerializerSettings.Converters.Add(new Newtonsoft.Json.Converters.StringEnumConverter());
         }
     }
 }

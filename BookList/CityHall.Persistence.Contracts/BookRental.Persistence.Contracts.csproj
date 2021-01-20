@@ -8,7 +8,6 @@
     <Folder Include="Contracts\" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\CityHall.Entities\BookList.Entities.csproj" />
-    <ProjectReference Include="..\CityHall.Enums\BookList.Enums.csproj" />
+    <ProjectReference Include="..\CityHall.Entities\BookRental.Entities.csproj" />
   </ItemGroup>
 </Project>

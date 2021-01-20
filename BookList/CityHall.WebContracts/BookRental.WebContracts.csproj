@@ -8,6 +8,9 @@
     <Folder Include="WebContracts\" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\CityHall.Enums\BookList.Enums.csproj" />
+    <ProjectReference Include="..\CityHall.Enums\Bookrental.Enums.csproj" />
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="System.ComponentModel.Annotations" Version="5.0.0" />
   </ItemGroup>
 </Project>

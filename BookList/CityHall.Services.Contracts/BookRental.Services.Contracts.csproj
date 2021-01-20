@@ -10,6 +10,7 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\CityHall.Entities\BookRental.Entities.csproj" />
+    <ProjectReference Include="..\CityHall.WebContracts\BookRental.WebContracts.csproj" />
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="Microsoft.AspNetCore.Authorization" Version="3.1.6" />
