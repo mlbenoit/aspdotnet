@@ -65,8 +65,8 @@ namespace CityHall.WebServices
                 })
                 .AddCookie(options =>
                 {
-                    options.LoginPath = "/admin/Admins/Login";
-                    options.AccessDeniedPath = "/admin/Forbidden";
+                    options.LoginPath = "/user/Users/Login";
+                    options.AccessDeniedPath = "/user/Forbidden";
                     options.SlidingExpiration = true;
                 });
 
@@ -160,6 +160,7 @@ namespace CityHall.WebServices
 
             //Services
             services.AddScoped<IAdminService, AdminService>();
+            services.AddScoped<IUsersAccountsService, UsersAccountsService>();
         }
 
         private static void SetupNewtonsoftJsonOptions(MvcNewtonsoftJsonOptions obj)

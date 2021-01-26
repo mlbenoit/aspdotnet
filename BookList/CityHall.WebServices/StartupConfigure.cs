@@ -82,8 +82,8 @@ namespace CityHall.WebServices
         private static void SetupHomePageRewrites(IApplicationBuilder app)
         {
             RewriteOptions options = new RewriteOptions();
-            options.AddRedirect("^$", "/admin/Home");
-            options.AddRedirect("^/$", "/admin/Home");
+            options.AddRedirect("^$", "/user/Users/Account");
+            options.AddRedirect("^/$", "/user/Users/Account");
             app.UseRewriter(options);
         }
 

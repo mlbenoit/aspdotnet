@@ -44,5 +44,6 @@
     <Folder Include="Auth\" />
     <Folder Include="ControllersMvc\" />
     <Folder Include="Views\AdminsMvc\" />
+    <Folder Include="Views\UsersMvc\" />
   </ItemGroup>
 </Project>

@@ -5,7 +5,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\CityHall.Persistence\BookList.Persistence.csproj" />
+    <ProjectReference Include="..\CityHall.Persistence\BookRental.Persistence.csproj" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Migrations\" />

@@ -18,9 +18,13 @@ namespace BookRental.Entities
         public string Address { get; set; }
         public string City { get; set; }
         public string ZipCode { get; set; }
-        public DateTime DateOfBirth { get; set; }
+        public DateTime? DateOfBirth { get; set; }
         public string NIF { get; set; }
         public string Gender { get; set; }
+        public string Password { get; set; }
+
+        public bool IsDeleted { get; set; }
+        public DateTime CreatedOn { get; set; }
 
         // Note: overriding properties in IdentityUser base class, so that EF generates the columns in right order
         public override DateTimeOffset? LockoutEnd { get; set; }

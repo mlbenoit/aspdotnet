@@ -11,5 +11,6 @@ namespace BookRental.Persistence.Contracts
         Task<UserEntity> GetByUserNameAsyc(string userName);
         Task<List<UserEntity>> GetAllAsReadOnlyAsync();
         Task<UserEntity> GetByIdAsReadOnlyAsync(string userId);
+        Task<UserEntity> CreateAsync(UserEntity userEntity);
     }
 }
