@@ -59,7 +59,6 @@ namespace BookRental.Services
 
             UserEntity userEntity = new UserEntity
             {
-                
                 Email = request.Email,
                 UserName = request.Email,
                 FirstName = request.FirstName,

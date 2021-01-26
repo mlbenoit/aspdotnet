@@ -8,11 +8,11 @@
         <form asp-route="Login" method="post">
             <div class="form-group">
                 <label asp-for="Email">Email</label>
-                <input type="email" class="form-control" asp-for="Email" placeholder="Email" value="user@gmail.com">
+                <input type="email" class="form-control" asp-for="Email" placeholder="Email">
             </div>
             <div class="form-group">
                 <label asp-for="Password">Password</label>
-                <input type="password" class="form-control" asp-for="Password" placeholder="Password" value="A@123456">
+                <input type="password" class="form-control" asp-for="Password" placeholder="Password">
             </div>
             <button type="submit" class="btn btn-primary">Login</button>
             <a asp-route="Users-Add">Create a New Account</a>
