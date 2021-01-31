@@ -24,25 +24,16 @@
     <Folder Include="Views\UsersMvc\" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\BookRental.Entities\BookRental.Entities.csproj">
+    <ProjectReference Include="..\BookRental.Services.Contracts\BookRental.Services.Contracts.csproj">
       <GlobalPropertiesToRemove></GlobalPropertiesToRemove>
     </ProjectReference>
     <ProjectReference Include="..\BookRental.Persistence\BookRental.Persistence.csproj">
       <GlobalPropertiesToRemove></GlobalPropertiesToRemove>
     </ProjectReference>
-    <ProjectReference Include="..\BookRental.Persistence.Contracts\BookRental.Persistence.Contracts.csproj">
-      <GlobalPropertiesToRemove></GlobalPropertiesToRemove>
-    </ProjectReference>
-    <ProjectReference Include="..\BookRental.Persistence.Migrations\BookRental.Persistence.Migrations.csproj">
-      <GlobalPropertiesToRemove></GlobalPropertiesToRemove>
-    </ProjectReference>
     <ProjectReference Include="..\BookRental.Services\BookRental.Services.csproj">
       <GlobalPropertiesToRemove></GlobalPropertiesToRemove>
     </ProjectReference>
-    <ProjectReference Include="..\BookRental.Services.Contracts\BookRental.Services.Contracts.csproj">
-      <GlobalPropertiesToRemove></GlobalPropertiesToRemove>
-    </ProjectReference>
-    <ProjectReference Include="..\BookRental.WebContracts\BookRental.WebContracts.csproj">
+    <ProjectReference Include="..\BookRental.Persistence.Migrations\BookRental.Persistence.Migrations.csproj">
       <GlobalPropertiesToRemove></GlobalPropertiesToRemove>
     </ProjectReference>
   </ItemGroup>

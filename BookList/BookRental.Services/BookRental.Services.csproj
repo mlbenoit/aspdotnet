@@ -9,15 +9,16 @@
     <Folder Include="Services\Identity\" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\CityHall.Persistence.Contracts\BookRental.Persistence.Contracts.csproj" />
-    <ProjectReference Include="..\CityHall.Services.Contracts\BookRental.Services.Contracts.csproj" />
-  </ItemGroup>
-  <ItemGroup>
     <PackageReference Include="Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore" Version="3.1.6" />
     <PackageReference Include="Microsoft.AspNetCore.Authorization" Version="3.1.6" />
     <PackageReference Include="Microsoft.AspNetCore.Identity.EntityFrameworkCore" Version="3.1.6" />
     <PackageReference Include="Microsoft.IdentityModel.Tokens" Version="6.7.1" />
     <PackageReference Include="Microsoft.Extensions.Identity.Stores" Version="3.1.6" />
     <PackageReference Include="System.IdentityModel.Tokens.Jwt" Version="6.7.1" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\BookRental.Entities\BookRental.Entities.csproj" />
+    <ProjectReference Include="..\BookRental.Services.Contracts\BookRental.Services.Contracts.csproj" />
+    <ProjectReference Include="..\BookRental.Persistence.Contracts\BookRental.Persistence.Contracts.csproj" />
   </ItemGroup>
 </Project>
